@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sajuhap · TikTok connect</title>
+<style>body{font-family:system-ui,sans-serif;background:#111;color:#eee;display:flex;min-height:100vh;align-items:center;justify-content:center;margin:0}main{max-width:520px;padding:24px;text-align:center}h1{font-size:20px}p{color:#aaa;font-size:14px;line-height:1.6}</style>
+</head><body><main>
+<h1>合 Sajuhap — TikTok 연결</h1>
+<p id="msg">연결 확인 중…</p>
+<p>이 창은 맥북 마케팅 도구가 읽고 닫아요. 아무것도 누르지 않으셔도 돼요.</p>
+</main>
+<script>
+const q=new URLSearchParams(location.search);
+document.getElementById('msg').textContent = q.get('code') ? '허용 완료 — 연결 코드를 받았어요.' : (q.get('error') ? ('연결 안 됨: '+q.get('error')) : '코드가 없어요.');
+</script>
+</body></html>
